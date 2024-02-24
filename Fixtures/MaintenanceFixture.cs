@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppEnergy.Models
+namespace AppEnergy.Fixtures
 {
-    class SolarPanel : Equipment
+    class MaintenanceFixture
     {
-        public string Color { get; set; }
-
     }
 }

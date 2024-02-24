@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppEnergy.Models
+namespace AppEnergy.Services
 {
-    class SolarPanel : Equipment
+    class UserService
     {
-        public string Color { get; set; }
-
     }
 }
