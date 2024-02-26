@@ -8,5 +8,6 @@ namespace AppEnergy.Models
 {
     class HeatPump : Equipment
     {
+        public override string Type { get { return "Heat Pump"; } } 
     }
 }

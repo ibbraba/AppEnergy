@@ -25,6 +25,11 @@ namespace AppEnergy.Models
         public string PhoneNumber { get; set; }
 
         public string Mail { get; set; }
+
+        public string FullName
+        {
+            get { return LastName + " " + Name; }
+        }
         
 
     }

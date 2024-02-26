@@ -17,6 +17,13 @@ namespace AppEnergy.Services
             return EquipmentFixture.equipments; 
         }
 
+        public List<Equipment> GetEquipmentPerClient(Client client)
+        {
+            return GetAllEquipments().Where(x => x.IdClient == client.Id).ToList();
+
+        }
+
+
 
         public void CreateEquipment(Equipment equipment)
         {

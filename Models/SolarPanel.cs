@@ -10,5 +10,6 @@ namespace AppEnergy.Models
     {
         public string Color { get; set; }
 
+        public string Type = "Solar panel";
     }
 }

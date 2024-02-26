@@ -8,6 +8,6 @@ namespace AppEnergy.Models
 {
     class ThermodynamicBaloon : Equipment
     {
-
+        public override string Type { get { return "Thermodynamic Baloon"; } } 
     }
 }
