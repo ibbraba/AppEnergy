@@ -13,7 +13,7 @@ namespace AppEnergy.Fixtures
         public static List<Client> clients = GetClients();
 
   
-        public static Client client1()
+        public static Client GetClient1()
         {
 
             Client client1 = new Client();  
@@ -35,12 +35,12 @@ namespace AppEnergy.Fixtures
         }
 
 
-        public static Client client2()
+        public static Client Getclient2()
         {
 
             Client client2 = new Client();
             client2.Id = 2;
-            client2.Name = 'Simon';
+            client2.Name = "Simon";
             client2.LastName = "Dury";
             client2.Adress = "11 rue de la vigne";
             client2.ZipCode = 92200;
@@ -59,8 +59,8 @@ namespace AppEnergy.Fixtures
 
         public static List<Client> GetClients()
         {
-            Client client1 = client1();
-            Client client2 = client2();
+            Client client1 = GetClient1();
+            Client client2 = Getclient2();
 
 
             List<Client> clients = new();

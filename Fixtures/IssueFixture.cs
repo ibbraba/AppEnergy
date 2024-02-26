@@ -10,6 +10,10 @@ namespace AppEnergy.Fixtures
 {
     static class IssueFixture
     {
+
+        public static List<Issue> Issues = GetIssues();  
+ 
+
         public static Issue Client1Issue()
         {
             Issue issue = new();
@@ -23,6 +27,15 @@ namespace AppEnergy.Fixtures
             return issue;
         }
 
+
+        public static List<Issue> GetIssues() {
+        
+            List<Issue> issues = new(); 
+            issues.Add(Client1Issue());
+
+
+            return issues;
+        }
 
     }
 }
