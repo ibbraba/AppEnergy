@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AppEnergy.Models
 {
-    class HeatPump
+    class HeatPump : Equipment
     {
     }
 }

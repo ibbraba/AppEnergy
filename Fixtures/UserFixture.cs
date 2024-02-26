@@ -7,10 +7,13 @@ using System.Threading.Tasks;
 
 namespace AppEnergy.Fixtures
 {
-    class UserFixture
+    static class UserFixture
     {
 
-        private User User1()
+        public static List<User> users = GetUsers();  
+
+
+        private static User User1()
         {
 
             User administration = new();
@@ -29,7 +32,7 @@ namespace AppEnergy.Fixtures
          }
 
 
-        private User User2()
+        private static User User2()
         {
             User engineer = new();
             engineer.Id = 2;
@@ -45,7 +48,7 @@ namespace AppEnergy.Fixtures
         }
        
 
-        public List<User> GetUsers()
+        public static List<User> GetUsers()
         {
 
             User user1 = User1();

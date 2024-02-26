@@ -8,5 +8,12 @@ namespace AppEnergy.Models
 {
     class Maintenance
     {
+        public int Id { get; set; }
+        public int IdMateriel { get; set; }
+
+        public string Description { get; set; }    
+
+        public string Status { get; set; }    
+
     }
 }

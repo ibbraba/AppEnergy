@@ -9,8 +9,13 @@ using System.Threading.Tasks;
 
 namespace AppEnergy.Fixtures
 {
-    public static class EquipmentFixture
+   static class EquipmentFixture
     {
+
+        public static List<Equipment> equipments = GetAllEquipments();
+        
+
+
          static Equipment Equipment1()
         {
             HeatPump equipment = new HeatPump();
@@ -51,7 +56,7 @@ namespace AppEnergy.Fixtures
 
 
 
-         static List<Equipment> GetAllEquipments()
+         public static List<Equipment> GetAllEquipments()
         {
             List<Equipment> equipments = new List<Equipment>();
             Equipment equipment1 = Equipment1();

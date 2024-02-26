@@ -7,15 +7,18 @@ using System.Threading.Tasks;
 
 namespace AppEnergy.Fixtures
 {
-    class ClientFixture
+    static class ClientFixture
     {
 
-        public Client client1()
+        public static List<Client> clients = GetClients();
+
+  
+        public static Client client1()
         {
 
             Client client1 = new Client();  
             client1.Id = 1;
-            client1.Name = 'Mickael'; 
+            client1.Name = "Mickael"; 
             client1.LastName = "Ferrand";
             client1.Adress = "6 rue des vents";
             client1.ZipCode = 78100;
@@ -32,7 +35,7 @@ namespace AppEnergy.Fixtures
         }
 
 
-        public Client client2()
+        public static Client client2()
         {
 
             Client client2 = new Client();
@@ -54,7 +57,7 @@ namespace AppEnergy.Fixtures
         }
 
 
-        public List<Client> GetClients()
+        public static List<Client> GetClients()
         {
             Client client1 = client1();
             Client client2 = client2();

@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace AppEnergy.Helpers
 {
-    public sealed class StatusEquipmentEnum
+    public static class ExceptionHelper
     {
+        public static string GENERAL_EXCEPTION = "An error as occured, please try again later."; 
 
-        public static string Functional = "Functional";
-
-        public static string OutOfService = "Out of service";
 
     }
 }
