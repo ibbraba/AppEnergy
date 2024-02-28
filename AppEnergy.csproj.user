@@ -7,7 +7,57 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Templates\CalendarPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Templates\ClientForm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Templates\ClientListPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Templates\ClientPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Templates\HomePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Templates\IssueForm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Templates\LoginForm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Templates\MaintenanceForm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Templates\CalendarPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Templates\ClientForm.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Templates\ClientListPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Templates\ClientPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Templates\HomePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Templates\IssueForm.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Templates\LoginForm.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Templates\MaintenanceForm.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

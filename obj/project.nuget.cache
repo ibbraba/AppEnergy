@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "EqwxVDvne9tEqjaM5QhyVAD8UkiZAYzxrw7KTJof5u/r+nFcjeeEc9d7z8HDSlZuZKDbyg9oWmmYJnFIBzwy9A==",
+  "dgSpecHash": "IBi+9Q7QRXQ4zTpL1Utiw0GOb9euPVKqHzkbG7vrLtw5IrlpDfUk9XVptNgf2pAPubwXxf3TOXeEkoLgH5DZNQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\33651\\Desktop\\.NET projects\\AppEnergy\\AppEnergy.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\33651\\.nuget\\packages\\handycontrol\\3.5.0\\handycontrol.3.5.0.nupkg.sha512"
+  ],
   "logs": []
 }

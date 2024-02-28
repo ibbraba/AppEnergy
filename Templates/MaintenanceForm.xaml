@@ -1,0 +1,52 @@
+﻿<Page x:Class="AppEnergy.Templates.MaintenanceForm"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:hc="https://handyorg.github.io/handycontrol"
+      xmlns:local="clr-namespace:AppEnergy.Templates"
+      mc:Ignorable="d" 
+      Background="White"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MaintenanceForm">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="20*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"></ColumnDefinition>
+            <ColumnDefinition Width="30*"></ColumnDefinition>
+            <ColumnDefinition Width="40*"></ColumnDefinition>
+            <ColumnDefinition Width="15*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center"> Add a maintenance </TextBlock>
+
+        <TextBlock Grid.Row="2" Grid.Column="1"> Contact </TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column="1"> Equipment</TextBlock>
+        <TextBlock Grid.Row="4" Grid.Column="1"> Date </TextBlock>
+        <TextBlock Grid.Row="5" Grid.Column="1"> Status </TextBlock>
+
+        <TextBox Grid.Row="2" Grid.Column="2"></TextBox>
+        <TextBox Grid.Row="3" Grid.Column="2"></TextBox>
+
+        <hc:DatePicker Grid.Row="4" Grid.Column="2"></hc:DatePicker>
+        <ComboBox Grid.Row="5" Grid.Column="2"></ComboBox>
+
+        <Button Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="2" Style="{StaticResource PrimaryButton}"> Add maintenance</Button>
+        
+
+    </Grid>
+</Page>

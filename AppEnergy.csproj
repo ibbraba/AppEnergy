@@ -8,7 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="NewFolder\" />
+    <None Remove="Templates\logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HandyControl" Version="3.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Templates\logo.png" />
   </ItemGroup>
 
 </Project>

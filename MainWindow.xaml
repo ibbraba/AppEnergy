@@ -5,8 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppEnergy"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="AE - MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"> </RowDefinition>
+            <RowDefinition Height="*"> </RowDefinition>
+            <RowDefinition Height="*"> </RowDefinition>
+            <RowDefinition Height="*"> </RowDefinition>
+            <RowDefinition Height="*"> </RowDefinition>
+            <RowDefinition Height="*"> </RowDefinition>
+            
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="15*"></ColumnDefinition>
+            <ColumnDefinition Width="75*"></ColumnDefinition>
+            <ColumnDefinition Width="15*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Button Grid.Row="0" Style="{StaticResource SecondaryButton}"   > Home</Button>
+        <Button Grid.Row="1" Style="{StaticResource SecondaryButton}" Background="#FF1A654F"> Clients</Button>
+        <Button Grid.Row="2" Style="{StaticResource SecondaryButton}"> Maintenance</Button>
+        <Button Grid.Row="3" Style="{StaticResource SecondaryButton}"> Customer support</Button>
+        <Button Grid.Row="4" Style="{StaticResource SecondaryButton}"> Plannings</Button>
+        <Button Grid.Row="5" Style="{StaticResource SecondaryButton}"> Exit</Button>
+
+        <TextBlock Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"> Username</TextBlock>
+
+        <Frame Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="6"  x:FieldModifier="public" x:Name="Main" NavigationUIVisibility="Hidden"></Frame>
 
     </Grid>
 </Window>

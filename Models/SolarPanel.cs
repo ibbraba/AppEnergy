@@ -10,6 +10,7 @@ namespace AppEnergy.Models
     {
         public string Color { get; set; }
 
-        public string Type = "Solar panel";
+        public override string Type { get { return "Solar panel"; } }
+
     }
 }
