@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\33651\Desktop\.NET projects\AppEnergy\App.xaml
-91678311418
+13381104866
 
-38-769420732
+42-1052598885
 1951458181499
-MainWindow.xaml;Templates\CalendarPage.xaml;Templates\ClientForm.xaml;Templates\ClientListPage.xaml;Templates\ClientPage.xaml;Templates\HomePage.xaml;Templates\IssueForm.xaml;Templates\LoginForm.xaml;Templates\MaintenanceForm.xaml;
+MainWindow.xaml;Templates\CalendarPage.xaml;Templates\ClientForm.xaml;Templates\ClientListPage.xaml;Templates\ClientPage.xaml;Templates\HomePage.xaml;Templates\IssueForm.xaml;Templates\IssuesList.xaml;Templates\LoginForm.xaml;Templates\MaintenanceForm.xaml;Templates\MaintenanceList.xaml;Templates\SingleIssuePage.xaml;Templates\SingleMaintenancePage.xaml;
 
 True
 

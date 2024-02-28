@@ -65,7 +65,7 @@ namespace AppEnergy.Templates {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/AppEnergy;component/templates/maintenanceform.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/AppEnergy;V1.0.0.0;component/templates/maintenanceform.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Templates\MaintenanceForm.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

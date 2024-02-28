@@ -25,10 +25,22 @@
     <Compile Update="Templates\IssueForm.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Templates\IssuesList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Templates\LoginForm.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Templates\MaintenanceForm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Templates\MaintenanceList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Templates\SingleIssuePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Templates\SingleMaintenancePage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -54,10 +66,22 @@
     <Page Update="Templates\IssueForm.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Templates\IssuesList.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Templates\LoginForm.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Templates\MaintenanceForm.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Templates\MaintenanceList.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Templates\SingleIssuePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Templates\SingleMaintenancePage.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
