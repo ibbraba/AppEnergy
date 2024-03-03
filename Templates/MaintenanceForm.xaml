@@ -39,13 +39,13 @@
         <TextBlock Grid.Row="4" Grid.Column="1"> Date </TextBlock>
         <TextBlock Grid.Row="5" Grid.Column="1"> Status </TextBlock>
 
-        <TextBox Grid.Row="2" Grid.Column="2"></TextBox>
-        <TextBox Grid.Row="3" Grid.Column="2"></TextBox>
+        <ComboBox x:Name="ContactComboBox" Grid.Row="2" Grid.Column="2" SelectionChanged="ContactComboBox_SelectionChanged"></ComboBox>
+        <ComboBox x:Name="EquipmentComboBox"  IsEnabled="False" Grid.Row="3" Grid.Column="2"></ComboBox>
 
-        <hc:DatePicker Grid.Row="4" Grid.Column="2"></hc:DatePicker>
-        <ComboBox Grid.Row="5" Grid.Column="2"></ComboBox>
+        <hc:DatePicker x:Name="MainteanceDatePicker" Grid.Row="4" Grid.Column="2"></hc:DatePicker>
+        <ComboBox x:Name="StatusComboBox" Grid.Row="5" Grid.Column="2"></ComboBox>
 
-        <Button Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="2" Style="{StaticResource PrimaryButton}"> Add maintenance</Button>
+        <Button x:Name="AddMaintenanceButton" Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="2" Style="{StaticResource PrimaryButton}" Click="AddMaintenanceButton_Click" > Add maintenance</Button>
         
 
     </Grid>

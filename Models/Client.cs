@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AppEnergy.Models
 {
-    class Client
+    public class Client
     {
         public int Id { get; set; }
 
@@ -30,7 +30,20 @@ namespace AppEnergy.Models
         {
             get { return LastName + " " + Name; }
         }
-        
+
+
+        public string FullAdress
+        {
+            get
+            {
+                return Adress + " " + ZipCode + " " + City; 
+            }
+        }
+
+        public override string ToString()
+        {
+            return FullName;
+        }
 
     }
 }

@@ -31,20 +31,19 @@
             <RowDefinition Height="10*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center"> Client's Name </TextBlock>
-        <TextBlock Grid.Row="3" Grid.Column="1"> Full Name</TextBlock>
-        <TextBlock Grid.Row="4" Grid.Column="1"> Adress </TextBlock>
-        <TextBlock Grid.Row="5" Grid.Column="1"> Phone Number </TextBlock>
-        <TextBlock Grid.Row="6" Grid.Column="1"> Mail </TextBlock>
-        <TextBlock Grid.Row="7" Grid.Column="1"> Created At</TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center"> Client</TextBlock>
+        <TextBlock x:Name="FullNameTextBox" Grid.Row="3" Grid.Column="1"> Full Name</TextBlock>
+        <TextBlock x:Name="AdressTextBox" Grid.Row="4" Grid.Column="1"> Adress </TextBlock>
+        <TextBlock x:Name="PhoneNumberTextBox" Grid.Row="5" Grid.Column="1"> Phone Number </TextBlock>
+        <TextBlock x:Name="MailTextBox" Grid.Row="6" Grid.Column="1"> Mail </TextBlock>
+        <TextBlock x:Name="CreatedAtTextBox" Grid.Row="7" Grid.Column="1"> Created At</TextBlock>
         
         
         <TextBlock Grid.Row="2" HorizontalAlignment="Center" Grid.Column="3"> Equipment</TextBlock>
-        <TextBlock Grid.Row="3" Grid.Column="3"> HeatPump #8084</TextBlock>
-        <TextBlock Grid.Row="4" Grid.Column="3"> Baloon #01</TextBlock>
-        <TextBlock Grid.Row="5" Grid.Column="3"> Soalr Panel  "452</TextBlock>
-
-        <Button Grid.Column="2" Grid.Row="8" Style="{StaticResource PrimaryButton}" VerticalAlignment="Bottom"> Edit Client</Button>
+        <ListBox x:Name="ClientEquipmentComboBox" Grid.Column="3" Grid.Row="3" Grid.RowSpan="4"></ListBox>
+        
+        
+        <Button x:Name="EditClientButton" Grid.Column="2" Grid.Row="8" Style="{StaticResource PrimaryButton}" VerticalAlignment="Bottom" Click="EditClientButton_Click"> Edit Client</Button>
         
     </Grid>
 </Page>

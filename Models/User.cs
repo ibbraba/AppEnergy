@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AppEnergy.Models
 {
-    class User
+    public class User
     {
         public int Id { get; set; }
         public string Name { get; set; }    
@@ -16,6 +16,10 @@ namespace AppEnergy.Models
 
         public string Role { get; set; }
 
+        public override string ToString()
+        {
+            return LastName + " " + Name;   
+        }
 
 
     }

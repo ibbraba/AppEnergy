@@ -1,0 +1,3 @@
+Application development issues : 
+
+-MessageBox Yes-No not in english on exit application Button 

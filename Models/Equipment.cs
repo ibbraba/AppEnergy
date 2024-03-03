@@ -7,7 +7,7 @@ using System.Windows.Controls;
 
 namespace AppEnergy.Models
 {
-    abstract class Equipment
+    public abstract class Equipment
     {
         public int Id { get; set; } 
 
@@ -18,5 +18,10 @@ namespace AppEnergy.Models
         public string Status { get; set; }
 
         public virtual string Type { get; set; }
+
+        public override string ToString()
+        {
+            return Type + " #" + Id; 
+        }
     }
 }

@@ -27,7 +27,46 @@ namespace AppEnergy
             Main.Content = new HomePage();
         }
 
+        private void HomeMenuButtton_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new HomePage();
+        }
 
-         
+        private void ClientsMenuButtton_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new ClientListPage();
+        }
+
+        private void MaintenanceMenuButtton_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new MaintenanceListPage();
+        }
+
+        private void CustomerSupportMenuButtton_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new IssuesList();
+        }
+
+        private void PlanningsMenuButtton_Click(object sender, RoutedEventArgs e)
+        {
+            new CalendarPage();
+        }
+
+        private void ExitMenuButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (this is Window window)
+            {
+                MessageBoxResult result = MessageBox.Show("Exit application ?", "Exit", MessageBoxButton.YesNo );
+                if (result == MessageBoxResult.Yes)
+                {
+                    window.Close();
+
+                }
+                else
+                {
+                    return;
+                }
+            }
+        }
     }
 }

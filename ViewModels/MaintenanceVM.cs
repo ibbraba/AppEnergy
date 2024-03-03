@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace AppEnergy.ViewModels
 {
-    class MaintenanceVM
+    public class MaintenanceVM
     {
         public int Id { get; set; }
 
@@ -22,6 +23,13 @@ namespace AppEnergy.ViewModels
 
         public string Status { get; set; }
 
+        public string ClientAdress { get; set; }    
+
+
+        public override string ToString()
+        {
+            return "Maintenance #" + Id + " - " + ClientName ;
+        }
 
     }
 }

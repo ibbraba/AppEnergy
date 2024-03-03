@@ -1,4 +1,4 @@
-﻿<Page x:Class="AppEnergy.Templates.MaintenanceList"
+﻿<Page x:Class="AppEnergy.Templates.MaintenanceListPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -25,5 +25,11 @@
             <ColumnDefinition Width="5*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
+        <TextBlock Grid.Row="1" Grid.Column="1"> Mainteances </TextBlock>
+        <ListBox x:Name="MaintenancesListBox" Grid.Row="2" Grid.Column="1" MouseDoubleClick="MaintenancesListBox_MouseDoubleClick"></ListBox>
+
+        <Button x:Name="AddMaintenanceButton" Grid.Row="3" Grid.Column="1" Style="{StaticResource PrimaryButton}" Click="AddMaintenanceButton_Click"> Add a maintenance</Button>
+        
+        
     </Grid>
 </Page>

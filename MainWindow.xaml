@@ -23,12 +23,12 @@
             <ColumnDefinition Width="15*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Button Grid.Row="0" Style="{StaticResource SecondaryButton}"   > Home</Button>
-        <Button Grid.Row="1" Style="{StaticResource SecondaryButton}" Background="#FF1A654F"> Clients</Button>
-        <Button Grid.Row="2" Style="{StaticResource SecondaryButton}"> Maintenance</Button>
-        <Button Grid.Row="3" Style="{StaticResource SecondaryButton}"> Customer support</Button>
-        <Button Grid.Row="4" Style="{StaticResource SecondaryButton}"> Plannings</Button>
-        <Button Grid.Row="5" Style="{StaticResource SecondaryButton}"> Exit</Button>
+        <Button x:Name="HomeMenuButtton" Grid.Row="0" Style="{StaticResource SecondaryButton}" Click="HomeMenuButtton_Click"    > Home</Button>
+        <Button x:Name="ClientsMenuButtton" Grid.Row="1" Style="{StaticResource SecondaryButton}" Background="#FF1A654F" Click="ClientsMenuButtton_Click"> Clients</Button>
+        <Button x:Name="MaintenanceMenuButtton" Grid.Row="2" Style="{StaticResource SecondaryButton}" Click="MaintenanceMenuButtton_Click"> Maintenance</Button>
+        <Button x:Name="CustomerSupportMenuButtton" Grid.Row="3" Style="{StaticResource SecondaryButton}" Click="CustomerSupportMenuButtton_Click"> Customer support</Button>
+        <Button x:Name="PlanningsMenuButtton" Grid.Row="4" Style="{StaticResource SecondaryButton}" Click="PlanningsMenuButtton_Click"> Calendar</Button>
+        <Button x:Name="ExitMenuButton" Grid.Row="5" Style="{StaticResource SecondaryButton}" Click="ExitMenuButton_Click"> Exit</Button>
 
         <TextBlock Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"> Username</TextBlock>
 

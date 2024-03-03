@@ -1,4 +1,4 @@
-﻿<Page x:Class="AppEnergy.Templates.SingleMaintenancePgaexaml"
+﻿<Page x:Class="AppEnergy.Templates.SingleMaintenancePage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -30,13 +30,13 @@
 
 
         <TextBlock Grid.Column="1" Grid.Row="1"> Maintenance</TextBlock>
-        <TextBlock Grid.Column="1" Grid.Row="2"> FullName</TextBlock>
-        <TextBlock Grid.Column="1" Grid.Row="3"> Date</TextBlock>
-        <TextBlock Grid.Column="1" Grid.Row="4"> Adress</TextBlock>
-        <TextBlock Grid.Column="1" Grid.Row="5"> Equipment</TextBlock>
-        <TextBlock Grid.Column="1" Grid.Row="6"> Description</TextBlock>
+        <TextBlock x:Name="FullnameTextBlock" Grid.Column="1" Grid.Row="2"> FullName</TextBlock>
+        <TextBlock x:Name="DateTextBlock" Grid.Column="1" Grid.Row="3"> Date</TextBlock>
+        <TextBlock x:Name="AdressTextBlock" Grid.Column="1" Grid.Row="4"> Adress</TextBlock>
+        <TextBlock x:Name="EquipmentTextBlock" Grid.Column="1" Grid.Row="5"> Equipment</TextBlock>
+        <TextBlock x:Name="DescriptionTextBlock" Grid.Column="1" Grid.Row="6"> Description</TextBlock>
 
-        <Button Grid.Column="1" Grid.Row="7" Style="{StaticResource PrimaryButton}" >Edit</Button>
+        <Button x:Name="EditEquipmentButton" Grid.Column="1" Grid.Row="7" Style="{StaticResource PrimaryButton}" Click="EditEquipmentButton_Click" >Edit</Button>
         
     </Grid>
 </Page>

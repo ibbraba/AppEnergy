@@ -13,5 +13,14 @@ namespace AppEnergy.Helpers
 
         public static string OutOfService = "Out of service";
 
+        public static List<string> GetStatus()
+        {
+            var status = new List<string>();
+            status.Add(Functional); 
+            status.Add(OutOfService);   
+
+            return status;
+        }
+
     }
 }

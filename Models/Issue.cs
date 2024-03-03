@@ -7,7 +7,7 @@ using System.Windows.Media;
 
 namespace AppEnergy.Models
 {
-    class Issue
+    public class Issue
     {
         public int Id { get; set; } 
         public int IdEquipment { get; set; }
@@ -18,5 +18,9 @@ namespace AppEnergy.Models
 
         public string Status {  get; set; }
 
+        public override string ToString()
+        {
+            return "Issue #" + Id;
+        }
     }
 }

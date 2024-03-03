@@ -53,7 +53,7 @@ namespace AppEnergy.Templates {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/AppEnergy;V1.0.0.0;component/templates/issueform.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/AppEnergy;component/templates/issueform.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Templates\IssueForm.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

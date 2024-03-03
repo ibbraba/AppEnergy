@@ -12,6 +12,14 @@ namespace AppEnergy.Services
 {
     class MaintenanceService
     {
+        private List<Maintenance> _allMaintenances;
+
+        public MaintenanceService() {
+
+            _allMaintenances = MaintenanceFixture.Maintenances;
+            
+
+        }
 
         public List<Maintenance> GetMaintenanceForEquipment(int idEquipment)
         {
@@ -20,6 +28,33 @@ namespace AppEnergy.Services
 
         }
 
+
+        public List<Maintenance> GetAllMiantenances()
+        {
+            List<Maintenance> maintenances = MaintenanceFixture.Maintenances; 
+            return maintenances;
+        }
+
+
+        public List<MaintenanceVM> GetAllMaintenancesVM()
+        {
+            List<MaintenanceVM> maintenanceVMs = new();
+
+            //Get all Maintenances
+            List<Maintenance> maintenances = MaintenanceFixture.Maintenances;
+
+
+
+            //Convert theese maintenance to their viewmodel
+            foreach(Maintenance maintenance in maintenances)
+            {
+                MaintenanceVM maintenanceVM = ConvertToMaintenanceVM(maintenance);
+                maintenanceVMs.Add(maintenanceVM);
+            }
+
+            return maintenanceVMs;
+
+        }
 
         private void ValidateMaintenance(Maintenance maintenance)
         {
@@ -51,6 +86,19 @@ namespace AppEnergy.Services
 
             }
 
+            //Set If from highest Id number +1
+            _allMaintenances.OrderBy(x =>x.Id); 
+
+            if(maintenances.Count == 0) {
+            
+            newMaintenance.Id =  1;
+
+            }
+            else
+            {
+                newMaintenance.Id = _allMaintenances.Last().Id + 1;
+            }
+            
             // add maintenance
             MaintenanceFixture.Maintenances.Add(newMaintenance);
 
@@ -95,6 +143,7 @@ namespace AppEnergy.Services
             maintenanceVM.EquipmentName= equipment.Type + "#" + maintenanceVM.IdEquipment;
             maintenanceVM.ClientName = client.FullName;
             maintenanceVM.Date = maintenance.Date;
+            maintenanceVM.ClientAdress = client.FullAdress;
 
             if (!String.IsNullOrEmpty(maintenance.Description))
             {

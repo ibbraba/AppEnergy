@@ -41,17 +41,17 @@
         <TextBlock Grid.Row="7" Grid.Column="1">Phone Number</TextBlock>
         <TextBlock Grid.Row="8" Grid.Column="1">Mail</TextBlock>
 
-        <TextBox Grid.Row="2" Grid.Column="2"></TextBox>
-        <TextBox Grid.Row="3" Grid.Column="2"></TextBox>
-        <TextBox Grid.Row="4" Grid.Column="2"></TextBox>
-        <TextBox Grid.Row="5" Grid.Column="2"></TextBox>
-        <TextBox Grid.Row="6" Grid.Column="2"></TextBox>
-        <TextBox Grid.Row="7" Grid.Column="2"></TextBox>
-        <TextBox Grid.Row="8" Grid.Column="2"></TextBox>
+        <TextBox x:Name="FirstNameTextBox" Grid.Row="2" Grid.Column="2"></TextBox>
+        <TextBox x:Name="LastNameTextBox" Grid.Row="3" Grid.Column="2"></TextBox>
+        <TextBox x:Name="AdressextBox" Grid.Row="4" Grid.Column="2"></TextBox>
+        <TextBox x:Name="ZipCodeTextBox" Grid.Row="5" Grid.Column="2"></TextBox>
+        <TextBox x:Name="CityTextBox" Grid.Row="6" Grid.Column="2"></TextBox>
+        <TextBox x:Name="PhoneNumberTextBox" Grid.Row="7" Grid.Column="2"></TextBox>
+        <TextBox x:Name="MailTextBox" Grid.Row="8" Grid.Column="2"></TextBox>
 
-        <Button Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="9" Style="{StaticResource PrimaryButton}">   Add Client</Button>
-        <Button Grid.Column="1"  Grid.ColumnSpan="2"  Grid.Row="9" Visibility="Hidden" Style="{StaticResource PrimaryButton}">   Edit Client</Button>
-        <Button Grid.Column="2" Margin="10,0,0,0" Grid.Row="9" Visibility="Hidden"  Style="{StaticResource PrimaryButton}">   Delete Client</Button>
+        <Button x:Name="AddCLientButton" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="9" Style="{StaticResource PrimaryButton}" Click="AddCLientButton_Click">   Add Client</Button>
+        <Button x:Name="EditCLientButton" Grid.Column="1"  Grid.ColumnSpan="2"  Grid.Row="9" Visibility="Hidden" Style="{StaticResource PrimaryButton}" Click="EditCLientButton_Click">   Edit Client</Button>
+        <Button x:Name="DeleteClientButton" Grid.Column="2" Margin="10,0,0,0" Grid.Row="9" Visibility="Hidden"  Style="{StaticResource PrimaryButton}" Click="DeleteClientButton_Click">   Delete Client</Button>
         
     </Grid>
 </Page>

@@ -27,9 +27,9 @@
 
         <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center">Clients</TextBlock>
 
-        <ListBox Grid.Row="2" Grid.Column="1"></ListBox>
+        <ListBox x:Name="ClientListBox" Grid.Row="2" Grid.Column="1" MouseDoubleClick="ClientListBox_MouseDoubleClick"></ListBox>
 
-        <Button Grid.Column="1" Grid.Row="3" Style="{StaticResource PrimaryButton}"> Add a client </Button>
+        <Button x:Name="AddClientButton" Grid.Column="1" Grid.Row="3" Style="{StaticResource PrimaryButton}" Click="AddClientButton_Click"> Add a client </Button>
         
         
     </Grid>

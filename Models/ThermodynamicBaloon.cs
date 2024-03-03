@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AppEnergy.Models
 {
-    class ThermodynamicBaloon : Equipment
+    public class ThermodynamicBaloon : Equipment
     {
         public override string Type { get { return "Thermodynamic Baloon"; } } 
     }
