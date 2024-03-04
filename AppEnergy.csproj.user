@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Templates\AddEquipmentForm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Templates\CalendarPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -46,6 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Templates\AddEquipmentForm.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Templates\CalendarPage.xaml">

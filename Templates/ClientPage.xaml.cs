@@ -24,23 +24,26 @@ namespace AppEnergy.Templates
     {
         private Client _client;
         private ClientService _clientService;
+        private EquipmentService _equipmentService;
+        private List<Equipment> _clientEquipments;
 
         public ClientPage( Client client)
         {
             InitializeComponent();
             _client = client;
-            _clientService = new ClientService(); 
+            _clientService = new ClientService();
 
-            
+            _equipmentService = new EquipmentService();
 
             FullNameTextBox.Text = client.LastName + " " + client.Name;
             AdressTextBox.Text = client.Adress + " " + client.ZipCode + " " + client.City;
             PhoneNumberTextBox.Text = client.PhoneNumber;
             MailTextBox.Text = client.Mail;
 
-            List<Equipment> equipments = _clientService.GetClientEquipment(_client);
+            _clientEquipments = _clientService.GetClientEquipment(_client);
+             
 
-            ClientEquipmentComboBox.ItemsSource = equipments;
+            ClientEquipmentListBox.ItemsSource = _clientEquipments;
 
             
 
@@ -52,6 +55,42 @@ namespace AppEnergy.Templates
         {
             NavigationService ns = NavigationService.GetNavigationService(this);
             ns.Navigate(new ClientForm(_client)); 
+        }
+
+        private void AddEquipmentClientButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService ns = NavigationService.GetNavigationService(this);
+            ns.Navigate(new AddEquipmentForm(_client));
+        }
+
+        private void ClientEquipmentListBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Equipment equipment = (Equipment)ClientEquipmentListBox.SelectedItem;
+            if(equipment != null)
+            {
+                MessageBoxResult messageBoxResult = MessageBox.Show("Delete equipment ?", "Delete", MessageBoxButton.YesNo); 
+                if(messageBoxResult == MessageBoxResult.Yes)
+                {
+                    try
+                    {
+                        _equipmentService.RemoveEquipment(equipment);
+                        _clientEquipments.Remove(equipment);
+
+                        //TODO update equipment List
+                        ClientEquipmentListBox.ItemsSource = _clientEquipments;
+
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show(ex.Message);
+                    }
+
+
+                }
+                
+            }
         }
     }
 }

@@ -40,10 +40,11 @@
         
         
         <TextBlock Grid.Row="2" HorizontalAlignment="Center" Grid.Column="3"> Equipment</TextBlock>
-        <ListBox x:Name="ClientEquipmentComboBox" Grid.Column="3" Grid.Row="3" Grid.RowSpan="4"></ListBox>
+        <ListBox x:Name="ClientEquipmentListBox" Grid.Column="3" Grid.Row="3" Grid.RowSpan="4" MouseDoubleClick="ClientEquipmentListBox_MouseDoubleClick"></ListBox>
         
         
-        <Button x:Name="EditClientButton" Grid.Column="2" Grid.Row="8" Style="{StaticResource PrimaryButton}" VerticalAlignment="Bottom" Click="EditClientButton_Click"> Edit Client</Button>
+        <Button x:Name="EditClientButton" Grid.Column="1" Grid.Row="8" Style="{StaticResource PrimaryButton}" VerticalAlignment="Bottom" Click="EditClientButton_Click"> Edit Client</Button>
+        <Button x:Name="AddEquipmentClientButton" Grid.Column="3" Grid.Row="8" Style="{StaticResource PrimaryButton}" VerticalAlignment="Bottom" Click="AddEquipmentClientButton_Click" > Add Equipment</Button>
         
     </Grid>
 </Page>

@@ -49,7 +49,7 @@ namespace AppEnergy
 
         private void PlanningsMenuButtton_Click(object sender, RoutedEventArgs e)
         {
-            new CalendarPage();
+            Main.Content = new CalendarPage();
         }
 
         private void ExitMenuButton_Click(object sender, RoutedEventArgs e)

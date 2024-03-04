@@ -46,3 +46,5 @@ C:\Users\33651\Desktop\.NET projects\AppEnergy\obj\Debug\net6.0-windows\Template
 C:\Users\33651\Desktop\.NET projects\AppEnergy\obj\Debug\net6.0-windows\Templates\MaintenanceList.baml
 C:\Users\33651\Desktop\.NET projects\AppEnergy\obj\Debug\net6.0-windows\Templates\SingleIssuePage.baml
 C:\Users\33651\Desktop\.NET projects\AppEnergy\obj\Debug\net6.0-windows\Templates\SingleMaintenancePage.baml
+C:\Users\33651\Desktop\.NET projects\AppEnergy\obj\Debug\net6.0-windows\Templates\AddEquipmentForm.g.cs
+C:\Users\33651\Desktop\.NET projects\AppEnergy\obj\Debug\net6.0-windows\Templates\AddEquipmentForm.baml
