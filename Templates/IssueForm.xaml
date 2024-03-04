@@ -31,20 +31,22 @@
             <ColumnDefinition Width="15*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center"> Add an issue </TextBlock>
+        <TextBlock x:Name="TitleTextBlock" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center"> Add an issue </TextBlock>
 
         <TextBlock Grid.Row="2" Grid.Column="1">Contact</TextBlock>
         <TextBlock Grid.Row="3" Grid.Column="1">Equipment</TextBlock>
         <TextBlock Grid.Row="4" Grid.Column="1">Description</TextBlock>
         <TextBlock Grid.Row="5" Grid.Column="1">Status</TextBlock>
 
-        <ComboBox Grid.Row="2" Grid.Column="2"> </ComboBox>
-        <ComboBox Grid.Row="3" Grid.Column="2"> </ComboBox>
-        <TextBox Grid.Row="4" Grid.Column="2"> </TextBox>
-        <ComboBox Grid.Row="5" Grid.Column="2"> </ComboBox>
+        <ComboBox x:Name="ClientComboBox" Grid.Row="2" Grid.Column="2" SelectionChanged="ClientComboBox_SelectionChanged"> </ComboBox>
+        <ComboBox x:Name="EquipmentComboBox" IsEnabled="False" Grid.Row="3" Grid.Column="2"> </ComboBox>
+        <TextBox x:Name="DescriptionTextBox" Grid.Row="4" Grid.Column="2"> </TextBox>
+        <ComboBox x:Name="StatusComboBox" Grid.Row="5" Grid.Column="2"> </ComboBox>
 
 
 
-        <Button Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="2" Style="{StaticResource PrimaryButton}"> Add issue </Button>
+        <Button x:Name="AddIssueButton" Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="2"  Style="{StaticResource PrimaryButton}" Click="AddIssueButton_Click"> Add issue </Button>
+        <Button x:Name="EditIssueButton" Grid.Column="1" Grid.Row="9" HorizontalAlignment="Right" Visibility="Hidden" Margin="0,0,20,0" Style="{StaticResource PrimaryButton}" Click="EditIssueButton_Click">Edit issue</Button>
+        <Button x:Name="DeleteIssueButton" Grid.Column="2" Grid.Row="9" Visibility="Hidden" Style="{StaticResource PrimaryButton}" Click="DeleteIssueButton_Click">Delete issue</Button>
     </Grid>
 </Page>

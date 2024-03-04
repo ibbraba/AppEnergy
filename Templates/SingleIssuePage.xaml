@@ -30,13 +30,13 @@
 
 
         <TextBlock Grid.Column="1" Grid.Row="1"> Issue</TextBlock>
-        <TextBlock Grid.Column="1" Grid.Row="2"> FullName</TextBlock>
-        <TextBlock Grid.Column="1" Grid.Row="3"> Date</TextBlock>
-        <TextBlock Grid.Column="1" Grid.Row="4"> Adress</TextBlock>
-        <TextBlock Grid.Column="1" Grid.Row="5"> Equipment</TextBlock>
-        <TextBlock Grid.Column="1" Grid.Row="6"> Note</TextBlock>
+        <TextBlock x:Name="FullNameTextBlock" Grid.Column="1" Grid.Row="2"> FullName</TextBlock>
+        <TextBlock x:Name="DateTextBlock" Grid.Column="1" Grid.Row="3"> Date</TextBlock>
+        <TextBlock x:Name="AdressTextBlock" Grid.Column="1" Grid.Row="4"> Adress</TextBlock>
+        <TextBlock x:Name="EquipmentTextBlock" Grid.Column="1" Grid.Row="5"> Equipment</TextBlock>
+        <TextBlock x:Name="NoteTextBlock" Grid.Column="1" Grid.Row="6"> Note</TextBlock>
 
-        <Button Grid.Column="1" Grid.Row="7" Style="{StaticResource PrimaryButton}" >Edit</Button>
+        <Button x:Name="IssueName" Grid.Column="1" Grid.Row="7" Style="{StaticResource PrimaryButton}" Click="IssueName_Click" >Edit</Button>
 
     </Grid>
 </Page>

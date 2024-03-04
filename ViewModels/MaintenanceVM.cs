@@ -11,7 +11,9 @@ namespace AppEnergy.ViewModels
     {
         public int Id { get; set; }
 
-        public int IdEquipment { get; set; }    
+        public int IdEquipment { get; set; }  
+        
+        public int IdClient { get; set; }
 
         public string ClientName { get; set; }
 

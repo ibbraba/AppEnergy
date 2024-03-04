@@ -29,9 +29,9 @@
 
 
             <TextBlock Grid.Column="1" Grid.Row="1"> Issues</TextBlock>
-            <ComboBox Grid.Column="1" Grid.Row="2"></ComboBox>
+            <ListBox x:Name="IssuesListBox" Grid.Column="1" Grid.Row="2" MouseDoubleClick="IssuesListBox_MouseDoubleClick"></ListBox>
 
-            <Button Grid.Column="1" Grid.Row="3" Style="{StaticResource PrimaryButton}">Add an issue</Button>
+            <Button x:Name="AddIssueButton" Grid.Column="1" Grid.Row="3" Style="{StaticResource PrimaryButton}" Click="AddIssueButton_Click">Add an issue</Button>
 
         
     </Grid>

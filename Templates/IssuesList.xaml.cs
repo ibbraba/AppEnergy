@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AppEnergy.Models;
+using AppEnergy.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,39 @@ namespace AppEnergy.Templates
     /// </summary>
     public partial class IssuesList : Page
     {
+        private IssueService _issueService;
+        private List<Issue> _issues;
+
         public IssuesList()
         {
             InitializeComponent();
+
+            _issueService = new IssueService();
+
+            _issues = _issueService.GetAllIssues();
+
+            IssuesListBox.ItemsSource = _issues; 
+
+
+
+        }
+
+        private void AddIssueButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService ns = NavigationService.GetNavigationService(this);
+
+            ns.Navigate(new IssueForm());
+        }
+
+        private void IssuesListBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Issue selectedIssue = (Issue)IssuesListBox.SelectedItem;
+
+            if(selectedIssue != null)
+            {
+                NavigationService ns = NavigationService.GetNavigationService(this);
+                ns.Navigate(new SingleIssuePage(selectedIssue));
+            }
         }
     }
 }

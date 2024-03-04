@@ -1,6 +1,7 @@
 ﻿using AppEnergy.Fixtures;
 using AppEnergy.Helpers;
 using AppEnergy.Models;
+using AppEnergy.Templates;
 using AppEnergy.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,8 @@ namespace AppEnergy.Services
     class IssueService
     {
 
+        
+
         public List<Issue> GetEquipmentIssues(int idEquipment)
         {
             List<Issue> issues = IssueFixture.Issues.Where(x => x.IdEquipment == idEquipment).ToList();
@@ -20,6 +23,12 @@ namespace AppEnergy.Services
             return issues;
         }
 
+
+        public List<Issue> GetAllIssues()
+        {
+            List<Issue> issues = IssueFixture.Issues;
+            return issues;
+        }
 
         private void ValidateIsssue( Issue issue) { 
         
@@ -45,6 +54,14 @@ namespace AppEnergy.Services
             {
                 throw new Exception("The max number of issues per equipment is already reached");
             }
+
+
+            
+
+            //Add 1 to highest issue Id
+
+            issue.Id = IssueFixture.Issues.OrderBy(x => x.Id).Last().Id + 1 ;
+            
 
             // Add issue 
 
@@ -81,12 +98,15 @@ namespace AppEnergy.Services
 
             IssueVM issueVM = new(); 
             issueVM.Id = issue.Id;
+            issueVM.IdClient = client.Id;
+            issueVM.IdEquipement = equipment.Id;
             issueVM.EquipmentName = equipment.Type + "#" + equipment.Id;
+
             issueVM.ClientName = client.FullName;
             issueVM.Description = issue.Description; 
             issueVM.Status = issue.Status;  
             issueVM.ReportDate = issue.ReportDate;
-
+            issueVM.CLientAdress = client.FullAdress;
             return issueVM;
 
         }

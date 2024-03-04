@@ -1,4 +1,7 @@
-﻿using System;
+﻿using AppEnergy.Models;
+using AppEnergy.Services;
+using AppEnergy.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +23,32 @@ namespace AppEnergy.Templates
     /// </summary>
     public partial class SingleIssuePage : Page
     {
-        public SingleIssuePage()
+        private Issue _issue;
+        private IssueVM _issueVM;
+
+        public SingleIssuePage(Issue issue)
         {
             InitializeComponent();
+
+            IssueService issueService = new();
+            _issue = issue;
+            _issueVM = issueService.ConvertToIssueVM(issue);
+
+            FullNameTextBlock.Text = _issueVM.ClientName;
+            AdressTextBlock.Text = _issueVM.CLientAdress;
+            DateTextBlock.Text = _issueVM.ReportDate.ToString("dd/MM/yyyy");
+            EquipmentTextBlock.Text = _issueVM.EquipmentName;
+            NoteTextBlock.Text = _issueVM.Description; 
+
+
+
+
+        }
+
+        private void IssueName_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService ns = NavigationService.GetNavigationService(this);
+            ns.Navigate( new IssueForm(_issueVM));
         }
     }
 }

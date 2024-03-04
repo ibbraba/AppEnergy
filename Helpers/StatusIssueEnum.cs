@@ -13,6 +13,13 @@ namespace AppEnergy.Helpers
 
         public static string Fixed = "Fixed";
 
+        public static List<string> GetIssueStatusList()
+        {
+            List <string> issues = new List<string>();
+            issues.Add(NotFixed);
+            issues.Add(Fixed);
 
+            return issues; 
+        }
     }
 }

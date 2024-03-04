@@ -139,7 +139,8 @@ namespace AppEnergy.Services
 
             MaintenanceVM maintenanceVM = new(); 
             maintenanceVM.Id = maintenance.Id;
-            maintenanceVM.IdEquipment = maintenance.IdEquipment; 
+            maintenanceVM.IdEquipment = maintenance.IdEquipment;
+            maintenanceVM.IdClient = client.Id;
             maintenanceVM.EquipmentName= equipment.Type + "#" + maintenanceVM.IdEquipment;
             maintenanceVM.ClientName = client.FullName;
             maintenanceVM.Date = maintenance.Date;
