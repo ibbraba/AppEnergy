@@ -13,6 +13,24 @@ namespace AppEnergy.Services
 {
     class ClientService
     {
+        private EquipmentService _equipmentService;
+        private MaintenanceService _maintenanceService;
+        private IssueService _issueService;
+        private List<Equipment> _equipments;
+        private List<Maintenance> _maintenances;
+        private List<Issue> _issues;
+
+        public ClientService()
+        {
+            _equipmentService = new EquipmentService();
+            _maintenanceService = new MaintenanceService();
+            _issueService = new IssueService();
+            _issues = _issueService.GetAllIssues();
+
+            _equipments = _equipmentService.GetAllEquipments();
+            _maintenances = _maintenanceService.GetAllMiantenances();
+;
+        }
 
         public List<Client> GetAllClients()
         {
@@ -68,7 +86,25 @@ namespace AppEnergy.Services
         public void DeleteClient(Client client)
         {
 
+           
+
+            //Remove all MAINTENANCES linked to client
+
+            _maintenanceService.RemoveClientMaintenances(client);
+
+            //Remove all issues linked to client
+            _issueService.RemoveClientIssues(client); 
+
+
+            //Remove all equipment linked to client
+
+            List<Equipment> clientEquipments = _equipmentService.GetEquipmentPerClient(client);
+            _equipments.RemoveAll(x => x.IdClient == client.Id);
+
+            //Remove client
             ClientFixture.clients.Remove(client);
+
+
 
         }
 
@@ -86,6 +122,8 @@ namespace AppEnergy.Services
             ClientFixture.clients.Remove(clientInDB);
             ClientFixture.clients.Add(client);
         }
+        
+        
         
 
     }

@@ -1,5 +1,6 @@
 ﻿using AppEnergy.Models;
 using AppEnergy.Services;
+using AppEnergy.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,7 @@ namespace AppEnergy.Templates
     public partial class IssuesList : Page
     {
         private IssueService _issueService;
-        private List<Issue> _issues;
+        private List<IssueVM> _issuesVM;
 
         public IssuesList()
         {
@@ -31,9 +32,9 @@ namespace AppEnergy.Templates
 
             _issueService = new IssueService();
 
-            _issues = _issueService.GetAllIssues();
+            _issuesVM = _issueService.GetAllIssuesVM();
 
-            IssuesListBox.ItemsSource = _issues; 
+            IssuesListBox.ItemsSource = _issuesVM; 
 
 
 
@@ -48,12 +49,13 @@ namespace AppEnergy.Templates
 
         private void IssuesListBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            Issue selectedIssue = (Issue)IssuesListBox.SelectedItem;
+            IssueVM selectedIssue = (IssueVM)IssuesListBox.SelectedItem;
 
             if(selectedIssue != null)
             {
+                Issue issue = _issueService.ConvertToIssue(selectedIssue);
                 NavigationService ns = NavigationService.GetNavigationService(this);
-                ns.Navigate(new SingleIssuePage(selectedIssue));
+                ns.Navigate(new SingleIssuePage(issue));
             }
         }
     }

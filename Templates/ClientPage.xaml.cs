@@ -74,12 +74,10 @@ namespace AppEnergy.Templates
                     try
                     {
                         _equipmentService.RemoveEquipment(equipment);
-                        _clientEquipments.Remove(equipment);
-
-                        //TODO update equipment List
-                        ClientEquipmentListBox.ItemsSource = _clientEquipments;
-
-
+                        ClientEquipmentListBox.ItemsSource = _equipmentService.GetEquipmentPerClient(_client);
+                        ClientEquipmentListBox.Items.Refresh();
+                      
+                      
                     }
                     catch (Exception ex)
                     {

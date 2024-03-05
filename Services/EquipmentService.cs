@@ -11,6 +11,16 @@ namespace AppEnergy.Services
 {
     class EquipmentService
     {
+        private List<Equipment> _equipments;
+        private MaintenanceService _maintenancesService;
+        private IssueService _IssueService;
+
+        public EquipmentService()
+        {
+            _equipments = GetAllEquipments();
+            _maintenancesService = new MaintenanceService();
+            _IssueService = new IssueService(); 
+        }
 
         public List<Equipment> GetAllEquipments()
         {
@@ -59,6 +69,8 @@ namespace AppEnergy.Services
             }
 
 
+            equipment.Id = _equipments.OrderBy(x => x.Id).Last().Id + 1;
+
             //Add Equipment
 
             EquipmentFixture.equipments.Add(equipment);
@@ -84,6 +96,24 @@ namespace AppEnergy.Services
 
         public void RemoveEquipment(Equipment equipment)
         {
+            //Remove maintenances linked to equipment
+            List<Maintenance> maintenances = _maintenancesService.GetMaintenanceForEquipment(equipment.Id);
+            foreach (Maintenance maintenance in maintenances)
+            {
+                _maintenancesService.DeleteMaintenance(maintenance);
+            }
+
+
+
+            //Remove issues linked to equipment 
+            List<Issue> issues = _IssueService.GetEquipmentIssues(equipment.Id);
+            foreach (Issue issue in issues)
+            {
+                _IssueService.DeleteIssue(issue);
+            }
+
+
+            //REMOVE EQUIPMENT
             EquipmentFixture.equipments.Remove(equipment); 
         }
 

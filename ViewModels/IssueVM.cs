@@ -27,5 +27,10 @@ namespace AppEnergy.ViewModels
         public DateTime ReportDate { get; set; }    
 
         public string Status { get; set; }
+
+        public override string ToString()
+        {
+            return "Issue " + Id + " - " + ClientName;
+        }
     }
 }

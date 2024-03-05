@@ -14,10 +14,11 @@ namespace AppEnergy.Services
     {
         private List<Maintenance> _allMaintenances;
 
+
         public MaintenanceService() {
 
             _allMaintenances = MaintenanceFixture.Maintenances;
-            
+    
 
         }
 
@@ -176,6 +177,34 @@ namespace AppEnergy.Services
             return maintenance;
         }
 
+
+        public void RemoveClientMaintenances(Client client)
+        {
+            //GET client equipments
+
+            EquipmentService equipmentService = new();
+
+            List<Equipment> equipments = equipmentService.GetEquipmentPerClient(client);
+
+            foreach (Equipment equipment in equipments)
+            {
+                if(equipment.IdClient == client.Id)
+                {
+                    //Get Equipments maintenances 
+                    List<Maintenance> maintenances = GetMaintenanceForEquipment(equipment.Id);
+
+                    foreach (Maintenance maintenance in maintenances)
+                    {
+                        //Remove maintenances 
+                        DeleteMaintenance(maintenance);
+                    }
+
+                }
+
+            }
+
+
+        }
 
     }
 }

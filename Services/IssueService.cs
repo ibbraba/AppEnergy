@@ -13,8 +13,7 @@ namespace AppEnergy.Services
 {
     class IssueService
     {
-
-        
+       
 
         public List<Issue> GetEquipmentIssues(int idEquipment)
         {
@@ -27,15 +26,39 @@ namespace AppEnergy.Services
         public List<Issue> GetAllIssues()
         {
             List<Issue> issues = IssueFixture.Issues;
+
+            // Make sure the associated equipment exists
+          
+
+
             return issues;
         }
 
+        public List<IssueVM> GetAllIssuesVM()
+        {
+            List<Issue> issues = GetAllIssues();
+
+            List<IssueVM> issueVMs = new();
+
+            foreach (Issue issue in issues)
+            {
+
+                IssueVM issueVM = ConvertToIssueVM(issue);
+                issueVMs.Add(issueVM);
+
+            }
+
+            return issueVMs;
+
+        }
+
+
+
         private void ValidateIsssue( Issue issue) { 
         
-            if(issue.IdEquipment ==0 || issue.ReportDate < DateTime.MinValue.AddDays(2) || String.IsNullOrEmpty(issue.Status) || String.IsNullOrEmpty(issue.Description)) {
+            if(issue.IdEquipment == 0 || issue.ReportDate < DateTime.MinValue.AddDays(2) || String.IsNullOrEmpty(issue.Status) || String.IsNullOrEmpty(issue.Description)) {
 
                 throw new ArgumentException("Please fill all the field to save the issue");
-
 
             }
         
@@ -93,6 +116,13 @@ namespace AppEnergy.Services
         public IssueVM ConvertToIssueVM (Issue issue)
         {
             Equipment equipment = EquipmentFixture.equipments.Find(x => x.Id == issue.IdEquipment);
+
+            if(equipment == null)
+            {
+
+            }
+
+
             Client client = ClientFixture.clients.Find(x => x.Id == equipment.IdClient);
 
 
@@ -124,6 +154,34 @@ namespace AppEnergy.Services
 
             return issue;
             
+
+
+        }
+
+        //Delete all issues related to client
+        public void RemoveClientIssues(Client client)
+        {
+            // GET Client Equipments 
+            EquipmentService equipmentService = new();
+            List<Equipment> equipments = equipmentService.GetEquipmentPerClient(client); 
+
+
+            // GET equipments issues 
+            
+            foreach( Equipment equipment in equipments)
+            {
+                if(equipment.IdClient == client.Id)  {
+
+                    List<Issue> issues = GetEquipmentIssues(equipment.Id); 
+
+                    foreach( Issue issue in issues)
+                    {
+                        DeleteIssue(issue);
+                    }
+                }
+            }
+
+            //RemoveIssues
 
 
         }
