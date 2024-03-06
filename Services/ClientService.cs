@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace AppEnergy.Services
 {
-    class ClientService
+    public class ClientService
     {
         private EquipmentService _equipmentService;
         private MaintenanceService _maintenanceService;
@@ -31,6 +31,9 @@ namespace AppEnergy.Services
             _maintenances = _maintenanceService.GetAllMiantenances();
 ;
         }
+
+
+
 
         public List<Client> GetAllClients()
         {
@@ -77,7 +80,7 @@ namespace AppEnergy.Services
 
             if (String.IsNullOrEmpty(client.PhoneNumber) || String.IsNullOrEmpty(client.Mail))
             {
-                throw new ArgumentException("Please enter client's phone number and mail");
+                throw new ArgumentNullException("Please enter client's phone number and mail");
             }
 
            

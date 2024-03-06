@@ -11,7 +11,7 @@ using System.Windows;
 
 namespace AppEnergy.Services
 {
-    class UserService
+    public class UserService
     {
         /// <summary>
         /// Check input entries to log in 

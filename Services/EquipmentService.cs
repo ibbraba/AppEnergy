@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace AppEnergy.Services
 {
-    class EquipmentService
+    public class EquipmentService
     {
         private List<Equipment> _equipments;
         private MaintenanceService _maintenancesService;

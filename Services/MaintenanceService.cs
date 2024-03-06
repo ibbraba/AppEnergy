@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace AppEnergy.Services
 {
-    class MaintenanceService
+    public class MaintenanceService
     {
         private List<Maintenance> _allMaintenances;
 

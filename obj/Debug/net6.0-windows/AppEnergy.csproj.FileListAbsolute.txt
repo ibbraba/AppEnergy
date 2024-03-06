@@ -19,9 +19,7 @@ C:\Users\33651\Desktop\.NET projects\AppEnergy\obj\Debug\net6.0-windows\refint\A
 C:\Users\33651\Desktop\.NET projects\AppEnergy\obj\Debug\net6.0-windows\AppEnergy.pdb
 C:\Users\33651\Desktop\.NET projects\AppEnergy\obj\Debug\net6.0-windows\AppEnergy.genruntimeconfig.cache
 C:\Users\33651\Desktop\.NET projects\AppEnergy\obj\Debug\net6.0-windows\ref\AppEnergy.dll
-C:\Users\33651\Desktop\.NET projects\AppEnergy\obj\Debug\net6.0-windows\Templates\LoginForm.g.cs
 C:\Users\33651\Desktop\.NET projects\AppEnergy\obj\Debug\net6.0-windows\App.baml
-C:\Users\33651\Desktop\.NET projects\AppEnergy\obj\Debug\net6.0-windows\Templates\LoginForm.baml
 C:\Users\33651\Desktop\.NET projects\AppEnergy\bin\Debug\net6.0-windows\HandyControl.dll
 C:\Users\33651\Desktop\.NET projects\AppEnergy\obj\Debug\net6.0-windows\AppEnergy.csproj.CopyComplete
 C:\Users\33651\Desktop\.NET projects\AppEnergy\obj\Debug\net6.0-windows\Templates\HomePage.g.cs

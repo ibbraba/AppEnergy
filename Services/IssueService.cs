@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace AppEnergy.Services
 {
-    class IssueService
+    public class IssueService
     {
        
 
