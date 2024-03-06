@@ -63,7 +63,7 @@ namespace AppEnergy.Services
 
             if (maintenance.IdEquipment == 0 || maintenance.Date < DateTime.MinValue.AddDays(5) || String.IsNullOrEmpty(maintenance.Status))
             {
-                throw new Exception("Please enter all the information about the maintenance");
+                throw new ArgumentException("Please enter all the information about the maintenance");
             }
 
 

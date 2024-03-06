@@ -116,14 +116,16 @@ namespace AppEnergy.Services
         public IssueVM ConvertToIssueVM (Issue issue)
         {
             Equipment equipment = EquipmentFixture.equipments.Find(x => x.Id == issue.IdEquipment);
+            Client client = ClientFixture.clients.Find(x => x.Id == equipment.IdClient);
 
-            if(equipment == null)
+            if(equipment == null || client == null)
             {
+
+                throw new Exception(ExceptionHelper.GENERAL_EXCEPTION);
 
             }
 
 
-            Client client = ClientFixture.clients.Find(x => x.Id == equipment.IdClient);
 
 
             IssueVM issueVM = new(); 
