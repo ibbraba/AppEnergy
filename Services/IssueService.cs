@@ -172,16 +172,17 @@ namespace AppEnergy.Services
             {
                 if(equipment.IdClient == client.Id)  {
 
-                    List<Issue> issues = GetEquipmentIssues(equipment.Id); 
+                    List<Issue> issues = GetEquipmentIssues(equipment.Id);
 
-                    foreach( Issue issue in issues)
+
+                    //RemoveIssues
+                    foreach ( Issue issue in issues)
                     {
                         DeleteIssue(issue);
                     }
                 }
             }
 
-            //RemoveIssues
 
 
         }

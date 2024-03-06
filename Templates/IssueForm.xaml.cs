@@ -104,14 +104,21 @@ namespace AppEnergy.Templates
 
                 // assign values
                 Issue issue = new();
-                issue.IdEquipment = selectedEquipment.Id;
-                issue.ReportDate = DateTime.Today;
-                if (!String.IsNullOrEmpty(DescriptionTextBox.Text)){
 
-                    issue.Description = DescriptionTextBox.Text;
+                if (selectedEquipment != null)
+                {
+                    issue.IdEquipment = selectedEquipment.Id;
+                    issue.ReportDate = DateTime.Today;
+                    if (!String.IsNullOrEmpty(DescriptionTextBox.Text))
+                    {
+
+                        issue.Description = DescriptionTextBox.Text;
+                    }
+
+                    issue.Status = StatusComboBox.SelectedItem.ToString();
+
                 }
-
-                issue.Status = StatusComboBox.SelectedItem.ToString();
+          
 
                
                 //create issue
@@ -145,22 +152,25 @@ namespace AppEnergy.Templates
 
                 //Assign values
                 Equipment selectedEquipment = (Equipment)EquipmentComboBox.SelectedItem;
+
                 if(selectedEquipment != null)
                 {
+                    issue.IdEquipment = selectedEquipment.Id;
+                    issue.Status = StatusComboBox.Text;
+                    if (!String.IsNullOrEmpty(DescriptionTextBox.Text))
+                    {
+                        issue.Description = DescriptionTextBox.Text;
+                    }
 
-                issue.IdEquipment = selectedEquipment.Id;
                 }
-                issue.Status = StatusComboBox.Text;
-                if (!String.IsNullOrEmpty(DescriptionTextBox.Text))
-                {
-                    issue.Description = DescriptionTextBox.Text;
-                }
+                
 
                 //Edit issue
                 _issueService.EditIssue(issue);
                 MessageBox.Show("Issue successfully edited");
                 NavigationService ns = NavigationService.GetNavigationService(this);
                 ns.Navigate(new IssuesList());
+
             }
             catch (Exception ex)
             {
@@ -175,13 +185,19 @@ namespace AppEnergy.Templates
         {
             Issue issue = _issueService.GetAllIssues().Find(x => x.Id == _issueVM.Id);
 
-            MessageBoxResult messageBoxResult = MessageBox.Show("Delete issue ?", "Delete", MessageBoxButton.YesNo); 
-            if(messageBoxResult == MessageBoxResult.Yes)
-            {
-                _issueService.DeleteIssue(issue);
-                NavigationService ns = NavigationService.GetNavigationService(this);
-                ns.Navigate(new IssuesList());
+            if (issue != null) {
+              
+                MessageBoxResult messageBoxResult = MessageBox.Show("Delete issue ?", "Delete", MessageBoxButton.YesNo);
+                if (messageBoxResult == MessageBoxResult.Yes)
+                {
+                    _issueService.DeleteIssue(issue);
+                    NavigationService ns = NavigationService.GetNavigationService(this);
+                    ns.Navigate(new IssuesList());
+                }
+
             }
+
+     
         }
     }
 }

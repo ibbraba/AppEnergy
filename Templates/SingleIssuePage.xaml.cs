@@ -36,6 +36,7 @@ namespace AppEnergy.Templates
 
             FullNameTextBlock.Text = _issueVM.ClientName;
             AdressTextBlock.Text = _issueVM.CLientAdress;
+            
             DateTextBlock.Text = _issueVM.ReportDate.ToString("dd/MM/yyyy");
             EquipmentTextBlock.Text = _issueVM.EquipmentName;
             NoteTextBlock.Text = _issueVM.Description; 

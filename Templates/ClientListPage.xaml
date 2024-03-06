@@ -25,7 +25,7 @@
             <ColumnDefinition Width="5*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center">Clients</TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" >Clients</TextBlock>
 
         <ListBox x:Name="ClientListBox" Grid.Row="2" Grid.Column="1" MouseDoubleClick="ClientListBox_MouseDoubleClick"></ListBox>
 

@@ -129,17 +129,23 @@ namespace AppEnergy.Templates
                 //assign values
                 Maintenance maintenance = new Maintenance();
                 Equipment selectedEquipment = (Equipment)EquipmentComboBox.SelectedItem;
-                maintenance.IdEquipment = selectedEquipment.Id;
-                maintenance.Status = StatusComboBox.SelectedItem.ToString();
-                maintenance.Date = (DateTime)MainteanceDatePicker.SelectedDate;
 
-                //Create maintenance
+                if (selectedEquipment != null)
+                {
+                    maintenance.IdEquipment = selectedEquipment.Id;
+                    maintenance.Status = StatusComboBox.SelectedItem.ToString();
+                    maintenance.Date = (DateTime)MainteanceDatePicker.SelectedDate;
+
+                }
+
+                    //Create maintenance
                 _maintenanceService.CreateMaintenance(maintenance);
                 MessageBox.Show("Maintenance successfully added ");
                 NavigationService ns = NavigationService.GetNavigationService(this);
                 ns.Navigate(new MaintenanceListPage());
 
-            }catch(Exception ex)
+            }
+            catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -155,9 +161,15 @@ namespace AppEnergy.Templates
                 //assign new values
 
                 Equipment selectedEquipment = (Equipment)EquipmentComboBox.SelectedItem;
-                _maintenanceVM.IdEquipment = selectedEquipment.Id;
-                _maintenanceVM.Date = (DateTime)MainteanceDatePicker.SelectedDate;
-                _maintenanceVM.Status = StatusComboBox.SelectedItem.ToString();
+
+                if(selectedEquipment  != null)
+                {
+
+                    _maintenanceVM.IdEquipment = selectedEquipment.Id;
+                    _maintenanceVM.Date = (DateTime)MainteanceDatePicker.SelectedDate;
+                    _maintenanceVM.Status = StatusComboBox.SelectedItem.ToString();
+
+                }
 
 
                 //Convert viewModel to maintenance object 

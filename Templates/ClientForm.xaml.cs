@@ -55,7 +55,11 @@ namespace AppEnergy.Templates
             client.Name = FirstNameTextBox.Text;
             client.LastName = LastNameTextBox.Text;
             client.Adress = AdressextBox.Text;
-            client.ZipCode = Int32.Parse(ZipCodeTextBox.Text);
+            if (!String.IsNullOrEmpty(ZipCodeTextBox.Text))
+            {
+                client.ZipCode = Int32.Parse(ZipCodeTextBox.Text);
+
+            }
             client.City = CityTextBox.Text;
             client.PhoneNumber = PhoneNumberTextBox.Text;
             client.Mail = MailTextBox.Text;
@@ -83,7 +87,10 @@ namespace AppEnergy.Templates
                 _client.Name = FirstNameTextBox.Text;
                 _client.LastName = LastNameTextBox.Text;
                 _client.Adress = AdressextBox.Text;
-                _client.ZipCode = Int32.Parse(ZipCodeTextBox.Text);
+                if (!String.IsNullOrEmpty(ZipCodeTextBox.Text))
+                {
+                    _client.ZipCode = Int32.Parse(ZipCodeTextBox.Text);
+                }
                 _client.City = CityTextBox.Text;
                 _client.PhoneNumber = PhoneNumberTextBox.Text;
                 _client.Mail = MailTextBox.Text;
